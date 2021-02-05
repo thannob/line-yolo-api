@@ -6,29 +6,29 @@ Sample bot for object detection
 
 * Install virtualenv
 ```
-pip install virtualenv
+$ pip install virtualenv
 ```
 
 * Create new virtual environment
 ```
-virtualenv line-yolo-api-venv
+$ virtualenv line-yolo-api-venv
 ```
 
 * Activate the virtual environment
 
 For Windows:
 ```
-line-yolo-api-venv\Scripts\activate.bat
+$ line-yolo-api-venv\Scripts\activate.bat
 ```
 
 For Mac and Linux:
 ```
-source line-yolo-api-venv/bin/activate
+$ source line-yolo-api-venv/bin/activate
 ```
 
 * Install required packages.
 ```
-pip install -r requirements.txt
+$ pip install -r requirements.txt
 ```
 
 * Create .env file.
