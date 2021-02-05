@@ -27,6 +27,15 @@ $ source line-yolo-api-venv/bin/activate
 ```
 
 * Install required packages.
+
+For Windows:
+
+Install pytorch based on the instruction from: https://pytorch.org/, then:
+```
+$ pip install -r requirements-windows.txt
+```
+
+For Mac and Linux:
 ```
 $ pip install -r requirements.txt
 ```
