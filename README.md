@@ -4,49 +4,47 @@ Sample bot for object detection
 
 ## Getting started
 
-* Install virtualenv
+### Install virtualenv
 ```
 $ pip install virtualenv
 ```
 
-* Create new virtual environment
+### Create new virtual environment
 ```
 $ virtualenv line-yolo-api-venv
 ```
 
-* Activate the virtual environment
+### Activate the virtual environment
 
-For Windows:
+* For Windows:
 ```
 $ line-yolo-api-venv\Scripts\activate.bat
 ```
 
-For Mac and Linux:
+* For Mac and Linux:
 ```
 $ source line-yolo-api-venv/bin/activate
 ```
 
-* Install required packages.
+### Install required packages.
 
-For Windows:
-
-Install pytorch based on the instruction from: https://pytorch.org/, then:
+* For Windows, install pytorch based on the instruction from: https://pytorch.org/, then:
 ```
 $ pip install -r requirements-windows.txt
 ```
 
-For Mac and Linux:
+* For Mac and Linux:
 ```
 $ pip install -r requirements.txt
 ```
 
-* Create .env file.
+### Create .env file.
 ```
 LINE_CHANNEL_SECRET='<<Your Line Channel Secret>>'
 LINE_CHANNEL_ACCESS_TOKEN='<<Your Line Channel Access Token>>'
 ```
 
-* Start the api.
+### Start the api.
 ```
 $ python app.py
 ```
