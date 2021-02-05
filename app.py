@@ -1,17 +1,3 @@
-# -*- coding: utf-8 -*-
-
-#  Licensed under the Apache License, Version 2.0 (the "License"); you may
-#  not use this file except in compliance with the License. You may obtain
-#  a copy of the License at
-#
-#       http://www.apache.org/licenses/LICENSE-2.0
-#
-#  Unless required by applicable law or agreed to in writing, software
-#  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-#  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
-#  License for the specific language governing permissions and limitations
-#  under the License.
-
 from __future__ import unicode_literals
 
 import datetime
@@ -83,6 +69,29 @@ handler = WebhookHandler(channel_secret)
 
 static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 
+### YOLOv5 ###
+# Setup
+weights, view_img, save_txt, imgsz = 'yolov5s.pt', False, False, 640
+conf_thres = 0.25
+iou_thres = 0.45
+classes = None
+agnostic_nms = False
+save_conf = False
+save_img = True
+
+# Directories
+save_dir = 'static/tmp/'
+
+# Initialize
+set_logging()
+device = select_device('')
+half = device.type != 'cpu'  # half precision only supported on CUDA
+
+# Load model
+model = attempt_load(weights, map_location=device)  # load FP32 model
+imgsz = check_img_size(imgsz, s=model.stride.max())  # check img_size
+if half:
+    model.half()  # to FP16
 
 # function for create tmp dir for download content
 def make_static_tmp_dir():
@@ -182,33 +191,8 @@ def handle_content_message(event):
     dist_name = os.path.basename(dist_path)
     os.rename(tempfile_path, dist_path)
 
-    ### YOLOv5 ###
-    # Setup
-    source, weights, view_img, save_txt, imgsz = dist_path, 'yolov5s.pt', False, False, 640
-    conf_thres = 0.25
-    iou_thres = 0.45
-    classes = None
-    agnostic_nms = False
-    save_conf = False
-
-    # Directories
-    save_dir = 'static/tmp/'
-
-    # Initialize
-    set_logging()
-    device = select_device('')
-    half = device.type != 'cpu'  # half precision only supported on CUDA
-
-    # Load model
-    model = attempt_load(weights, map_location=device)  # load FP32 model
-    imgsz = check_img_size(imgsz, s=model.stride.max())  # check img_size
-    if half:
-        model.half()  # to FP16
-
     # Set Dataloader
-    vid_path, vid_writer = None, None
-    save_img = True
-    dataset = LoadImages(source, img_size=imgsz)
+    dataset = LoadImages(dist_path, img_size=imgsz)
         
     # Get names and colors
     names = model.module.names if hasattr(model, 'module') else model.names
