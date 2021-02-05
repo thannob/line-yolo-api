@@ -21,6 +21,7 @@ import os
 import sys
 import tempfile
 from argparse import ArgumentParser
+from dotenv import load_dotenv
 
 from flask import Flask, request, abort, send_from_directory
 from werkzeug.middleware.proxy_fix import ProxyFix
@@ -50,6 +51,9 @@ from linebot.models import (
 
 app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_host=1, x_proto=1)
+
+# reads the key-value pair from .env file and adds them to environment variable.
+load_dotenv()
 
 # get channel_secret and channel_access_token from your environment variable
 channel_secret = os.getenv('LINE_CHANNEL_SECRET', None)
