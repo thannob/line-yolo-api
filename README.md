@@ -1,21 +1,43 @@
-# Flask KitchenSink
+# Line Yolo API
 
-Sample bot using [Flask](http://flask.pocoo.org/)
+Sample bot for object detection
 
 ## Getting started
 
-Install required packages.
+* Install virtualenv
 ```
-$ pip install -r requirements.txt
+pip install virtualenv
 ```
 
-Create .env file.
+* Create new virtual environment
+```
+virtualenv line-yolo-api-venv
+```
+
+* Activate the virtual environment
+
+For Windows:
+```
+line-yolo-api-venv\Scripts\activate.bat
+```
+
+For Mac and Linux:
+```
+source line-yolo-api-venv/bin/activate
+```
+
+* Install required packages.
+```
+pip install -r requirements.txt
+```
+
+* Create .env file.
 ```
 LINE_CHANNEL_SECRET='<<Your Line Channel Secret>>'
 LINE_CHANNEL_ACCESS_TOKEN='<<Your Line Channel Access Token>>'
 ```
 
-Start the api.
+* Start the api.
 ```
 $ python app.py
 ```
