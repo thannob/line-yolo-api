@@ -10,7 +10,7 @@ RUN apt-get install 'ffmpeg'\
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ['.env', WORKDIR]
+COPY .env ./.env
 COPY . .
 
 # Make sure the environment is activated:
