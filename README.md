@@ -43,5 +43,5 @@ LINE_CHANNEL_ACCESS_TOKEN='<<Your Line Channel Access Token>>'
 
 ### Start the api.
 ```
-$ python app.py
+$ python line-yolo-api.py
 ```
