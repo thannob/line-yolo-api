@@ -131,3 +131,6 @@ dmypy.json
 static
 
 .DS_Store
+
+ngrok.exe
+mybest.pt
