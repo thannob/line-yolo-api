@@ -4,7 +4,7 @@ Sample bot for object detection
 
 ### Create new virtual environment
 ```
-pip -m venv line-yolo-api-venv
+python -m venv line-yolo-api-venv
 ```
 
 ### Activate the virtual environment
