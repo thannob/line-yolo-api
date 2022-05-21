@@ -2,16 +2,9 @@
 
 Sample bot for object detection
 
-## Getting started
-
-### Install virtualenv
-```
-$ pip install virtualenv
-```
-
 ### Create new virtual environment
 ```
-$ virtualenv line-yolo-api-venv
+$ pip -m venv line-yolo-api-venv
 ```
 
 ### Activate the virtual environment
