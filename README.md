@@ -21,7 +21,11 @@ $ source line-yolo-api-venv/bin/activate
 
 ### Install required packages.
 
-* For Windows, use PIP to install pytorch based on the instruction from: https://pytorch.org/, then:
+* For Windows, use PIP to install pytorch based on the instruction from: https://pytorch.org/, for example:
+```
+$ pip install torch torchvision torchaudio
+```
+then:
 ```
 $ pip install -r requirements-windows.txt
 ```
